@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat en direct</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#chat-window {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.input-container {
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 5px;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div id="chat-window"></div>
+    <div class="input-container">
+      <input type="text" id="message" placeholder="Entrez votre message...">
+      <button onclick="sendMessage()">Envoyer</button>
+    </div>
+  </div>
+  <script>
+  const chatWindow = document.getElementById("chat-window");
+const messageInput = document.getElementById("message");
+
+function appendMessage(username, message) {
+  const messageElement = document.createElement("div");
+  messageElement.innerHTML = `<strong>${username}:</strong> ${message}`;
+  chatWindow.appendChild(messageElement);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function sendMessage() {
+  const message = messageInput.value;
+  if (message.trim() !== "") {
+    appendMessage("Moi", message);
+    // Ici, vous pouvez ajouter le code pour envoyer le message à tous les utilisateurs connectés.
+    // Par exemple, si vous avez une connexion WebSocket, vous pouvez envoyer le message via cette connexion.
+    // Pour cet exemple simple, nous n'avons pas de connexion WebSocket, donc le message ne sera envoyé qu'à soi-même.
+    messageInput.value = "";
+  }
+}
+
+messageInput.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    sendMessage();
+  }
+});
+</script>
+</body>
+</html>

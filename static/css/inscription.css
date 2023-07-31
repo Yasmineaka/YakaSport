@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f3f3f3;
+}
+
+.container {
+  background: linear-gradient(#ffffff, #009f25e4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: -10px;
+  padding: 0;
+}
+strong{
+  color: green;
+}
+.form-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #323232;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  color: #656565;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+input[type="password"] ,
+input[type="phone"],
+input[type="text"]{
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #cdcccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input[type="password"]:focus {
+  outline: none;
+  border-color: #8b8a8a;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.link-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.link-container a {
+  color: #3366cc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.link-container a:hover {
+  color: #1a4dff;
+}
+
+.error-msg {
+  font-size: 14px;
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.success-msg {
+  font-size: 14px;
+  color: #45a049;
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page de Connexion</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/inscription.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <ul style="list-style: none;"><li><a style="text-decoration: none; color: #FFA500; box-shadow: 1px 1px 1px;  " href="/">Yaka<strong>Sport</strong></a></li></ul>
+    </div>
+    <hr>
+    <div class="form-container">
+      <h2>Inscription</h2>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <form action="{{ url_for('inscription') }}" method="POST">
+
+        <div class="form-group">
+          <label for="name">Nom:</label>
+          <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Téléphone:</label>
+          <input type="phone" id="phone" name="phone" placeholder="Entrez votre numero de telephone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe:</label>
+          <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+        </div>
+
+        <input type="submit" value="S'inscrire">
+        <p style="text-align: center;border: 1px solid green ; width: 20%; margin-left: 40%;"><a style="text-decoration: none; color: green;" href="{{url_for('connexion')}}" >Connexion</a></p>
+      </form>
+     
+    </div>
+  </div>
+</body>
+</html>
+
+
+

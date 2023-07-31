@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .post {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comments {
+    margin-top: 20px;
+  }
+  
+  h3 {
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+  
+  .comment-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .comment-list li {
+    margin-bottom: 5px;
+  }
+  
+  .comment {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-content {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .comment-delete {
+    display: inline-block;
+    color: red;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .sub-comments {
+    margin-left: 30px;
+  }
+  
+  .sub-comments .comment {
+    background-color: #f1f1f1;
+  }
+  
+  .comment .sub-comment-input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .comment button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .comment button:hover {
+    background-color: #0056b3;
+  }
+  
+  .publish-button,
+  #imageUploadLabel {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  .publish-button:hover,
+  #imageUploadLabel:hover {
+    background-color: #0056b3;
+  }
+  

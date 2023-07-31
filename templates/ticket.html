@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulation de Paiement</title>
+  <style>
+    /* Styles CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+    background-color: #FFA500;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -10px;
+    padding: 0;
+  }
+
+  strong {
+    color: green;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #ffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(137, 43, 226, 0.671);
+  }
+
+  .buttons {
+    margin-left: auto;
+  }
+
+  button {
+    background-color: #009f25e4;
+    color: #ffff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: rgba(137, 43, 226, 0.671);
+  }
+
+  button a {
+    text-decoration: none;
+    color: white;
+  }
+
+    .container {
+      padding: 20px;
+    }
+
+    .match-info {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .payment-form {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    .payment-form input[type="text"],
+    .payment-form input[type="number"],
+    .payment-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .payment-form button {
+      background-color: #009f25e4;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .receipt {
+      border: 3px solid #009f25e4;
+      padding: 20px;
+      background-color: #fff;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .receipt h2 {
+      margin-bottom: 20px;
+      color: #009f25e4;
+      font-size: 28px;
+    }
+
+    .receipt p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .receipt .ticket-info {
+      background-color: #009f25e4;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .receipt .ticket-info span {
+      font-size: 18px;
+    }
+    .footer {
+    background-color: #FFA500;
+    color: #ffff;
+    text-align: center;
+    padding: 10px;
+  }
+    /* Styles responsifs */
+  @media (max-width: 300px) {
+    .navbar {
+      flex-direction: column;
+    }
+
+    .logo {
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+}
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+          <ul style="list-style: none;"><li><a style="text-decoration: none; color: #fefdfc; box-shadow: 1px 1px 1px;  " href="/">Yaka<strong>Sport</strong></a></li></ul>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/publication">Publications</a></li>
+            <li><a href="">Achat de ticket</a></li>
+            <li><a href="/a_propos">A propos</a></li>
+          </ul>
+        </nav>
+        <div class="buttons">
+          <button class="btn-connexion"><a href="/">Deconnexion</a></button>
+        </div>
+      </div>
+  <div class="container">
+    <div class="match-info">
+      <h2>Match du jour</h2>
+      <p>Sport: Football</p>
+      <p>Équipes: Équipe A vs. Équipe B</p>
+      <p>Date: 02 Août 2023</p>
+      <p>Heure: 15h00</p>
+      <p>Lieu: Stade Felix Houphouet Boigny</p>
+      <p>Prix du billet: 20000 FCFA</p>
+    </div>
+    <div class="payment-form">
+      <h2>Informations de Paiement</h2>
+      <input type="text" placeholder="Nom complet">
+      <input type="text" placeholder="Numéro de carte Visa">
+      <input type="text" placeholder="Date d'expiration (MM/AA)">
+      <input type="number" placeholder="CVV">
+      <select>
+        <option value="">Moyen de Paiement</option>
+        <option value="orange-money">Orange Money</option>
+        <option value="visa">Carte Visa</option>
+      </select>
+      <button onclick="processPayment()">Paiement</button>
+    </div>
+    <div class="receipt" id="receipt" style="display: none;">
+      <h2>Reçu de Paiement</h2>
+      <div class="ticket-info">
+        <p><span>Nom:</span> John Doe</p>
+        <p><span>Sport:</span> Football</p>
+        <p><span>Équipes:</span> Équipe A vs. Équipe B</p>
+        <p><span>Date:</span> 31 Juillet 2023</p>
+        <p><span>Heure:</span> 15h00</p>
+        <p><span>Lieu:</span> Stade XYZ</p>
+        <p><span>Prix:</span> 20.00 EUR</p>
+      </div>
+      <p>Moyen de Paiement: <span id="paymentMethod"></span></p>
+      <p>Montant Payé: <span id="amountPaid"></span> EUR</p>
+      <p>Numéro de Transaction: <span id="transactionNumber"></span></p>
+      <button onclick="telechargerRecuPDF()">Télécharger le Reçu</button>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>Tous droits réservés &copy; 2023 VotreEntreprise</p>
+  </footer>
+  <!-- Bibliothèque pdfmake -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/vfs_fonts.js"></script>
+
+  <script>
+    function processPayment() {
+      const paymentMethod = document.querySelector('select').value;
+      const amountPaid = 20.00; // Montant du billet
+      const transactionNumber = genererNumeroTransaction();
+
+      document.getElementById('paymentMethod').innerText = paymentMethod;
+      document.getElementById('amountPaid').innerText = amountPaid.toFixed(2);
+      document.getElementById('transactionNumber').innerText = transactionNumber;
+
+      // Afficher le reçu et masquer le formulaire de paiement
+      document.getElementById('receipt').style.display = 'block';
+      document.querySelector('.payment-form').style.display = 'none';
+    }
+
+    function genererNumeroTransaction() {
+      // Générer un numéro de transaction aléatoire (simulé ici)
+      return 'TRX' + Math.floor(Math.random() * 1000000);
+    }
+
+    function telechargerRecuPDF() {
+      const contenuRecu = `
+        Reçu de Paiement
+
+        Pays: Cote d Ivire
+        Sport: Football
+        Équipes: Équipe A vs. Équipe B
+        Date: 31 Juillet 2023
+        Heure: 15h00
+        Lieu: Stade Félix Houphouet Boigny
+        Prix: 20000 FCFA
+
+        Moyen de Paiement: ${document.querySelector('select').value}
+        Montant Payé: ${20.00.toFixed(2)} FCFA
+        Numéro de Transaction: ${genererNumeroTransaction()}
+      `;
+
+      const docDefinition = {
+        content: [
+          { text: contenuRecu, fontSize: 12 }
+        ]
+      };
+
+      // Générer le PDF
+      const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+
+      // Télécharger le PDF en utilisant Blob
+      pdfDocGenerator.getBlob((blob) => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = "Recu_Paiement.pdf";
+        link.click();
+      });
+    }
+    
+  </script>
+</body>
+</html>

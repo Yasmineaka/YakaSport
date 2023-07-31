@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page de Commentaires</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.navbar {
+    background-color: #FFA500;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -10px;
+    padding: 0;
+  }
+
+  strong {
+    color: green;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #ffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(137, 43, 226, 0.671);
+  }
+
+  .buttons {
+    margin-left: auto;
+  }
+
+  button {
+    background-color: #009f25e4;
+    color: #ffff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: rgba(137, 43, 226, 0.671);
+  }
+
+  button a {
+    text-decoration: none;
+    color: white;
+  }
+.post {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #ffa600b8;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 70%;
+  height: 300px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+h3 {
+  color: #ffa600b8;
+  margin-bottom: 10px;
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-list li {
+  margin-bottom: 5px;
+}
+
+.comment {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-content {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-delete {
+  display: inline-block;
+  color: red;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sub-comments {
+  margin-left: 30px;
+}
+
+.sub-comments .comment {
+  background-color: #f1f1f1;
+}
+
+.comment .sub-comment-input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment button {
+  background-color: #FFA500;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment button:hover {
+  background-color: #ffa600f1;
+}
+
+.publish-button,
+#imageUploadLabel {
+  background-color: #009f25e4;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.publish-button:hover,
+#imageUploadLabel:hover {
+  background-color: #009f25e4;
+}
+.input-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+.input-container input[type=text]{
+  height: 30px;
+}
+input[type=file]{
+  background: #ffa600d0;
+}
+input {
+  border-radius: 3px;
+  border: 1px solid;
+}
+    #postContentInput {
+      width: 70%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #imageUploadLabel,
+    .publish-button {
+      background-color: #009f25e4;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+    }
+
+    #imageUploadLabel:hover,
+    .publish-button:hover {
+      background-color: #009f25e4;
+    }
+     /* Styles responsifs */
+  @media (max-width: 300px) {
+    .navbar {
+      flex-direction: column;
+    }
+
+    .logo {
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <ul style="list-style: none;"><li><a style="text-decoration: none; color: #fefdfc; box-shadow: 1px 1px 1px;  " href="/">Yaka<strong>Sport</strong></a></li></ul>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/publication">Publications</a></li>
+        <li><a href="">Achat de ticket</a></li>
+        <li><a href="/a_propos">A propos</a></li>
+      </ul>
+    </nav>
+    <div class="buttons">
+      <button class="btn-connexion"><a href="/">Deconnexion</a></button>
+    </div>
+  </div>
+  <div class="post" id="postList">
+    <!-- Les publications  -->
+  </div>
+  <div class="input-container">
+    <input type="text" id="postContentInput" placeholder="Entrez le contenu de la publication...">
+    <input type="file" id="imageInput" accept="image/*">
+   <!-- <label id="imageUploadLabel" for="imageInput">Publier une image</label>-->
+    <button class="publish-button" onclick="createPost()">Publier</button>
+  </div>
+  <script>
+
+   // Fonction pour charger les publications depuis le local storage
+   function loadPublicationsFromLocalStorage() {
+      const publications = JSON.parse(localStorage.getItem('publications')) || [];
+      publications.forEach((publication) => {
+        addPost(publication.content, publication.number, publication.image);
+      });
+    }
+
+    // Fonction pour sauvegarder les publications dans le local storage
+    function savePublicationsToLocalStorage() {
+      const posts = document.querySelectorAll('.post');
+      const publications = Array.from(posts).map((post) => {
+        const content = post.querySelector('p').innerText;
+        const image = post.querySelector('img') ? post.querySelector('img').src : null;
+        const number = post.querySelector('.comment-list').id.replace('commentList', '');
+        return { content, number, image };
+      });
+      localStorage.setItem('publications', JSON.stringify(publications));
+    }
+
+    // Fonction pour charger les publications lors du chargement de la page   
+    window.addEventListener('load', () => {
+      loadPublicationsFromLocalStorage();
+    });
+
+// Fonction pour charger les commentaires depuis le local storage
+function loadCommentsFromLocalStorage() {
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  comments.forEach((comment) => {
+    addComment(comment.listId, comment.inputId, comment.content);
+  });
+}
+
+// Fonction pour sauvegarder les commentaires dans le local storage 
+function saveCommentsToLocalStorage() {
+  const comments = document.querySelectorAll('.comment');
+  const commentsData = Array.from(comments).map((comment) => {
+    const listId = comment.querySelector('ul').id;
+    const inputId = comment.querySelector('input').id;
+    const content = comment.querySelector('.comment-content').innerText;
+    return { listId, inputId, content };
+  });
+  localStorage.setItem('comments', JSON.stringify(commentsData));
+}
+
+
+// Fonction pour charger les réponses aux commentaires depuis le local storage
+function loadSubCommentsFromLocalStorage() {
+  const subComments = JSON.parse(localStorage.getItem('subComments')) || [];
+  subComments.forEach((subComment) => {
+    addSubComment(subComment.buttonComment, subComment.content);
+  });
+}
+
+// Fonction pour sauvegarder les réponses aux commentaires dans le local storage
+function saveSubCommentsToLocalStorage() {
+  const subComments = document.querySelectorAll('.sub-comments li');
+  const subCommentsData = Array.from(subComments).map((subComment) => {
+    const buttonComment = subComment.parentElement.querySelector('button');
+    const content = subComment.innerText;
+    return { buttonComment, content };
+  });
+  localStorage.setItem('subComments', JSON.stringify(subCommentsData));
+}
+
+
+
+
+
+
+  // Le code de saisie de text
+  function createPost() {
+      const postContentInput = document.getElementById('postContentInput');
+      const postContent = postContentInput.value;
+      if (postContent.trim() !== '') {
+        // Créer une nouvelle publication avec l'image (si disponible)
+        const imageInput = document.getElementById('imageInput');
+        const image = imageInput.files.length > 0 ? URL.createObjectURL(imageInput.files[0]) : null;
+        addPost(postContent, Date.now(), image);
+        // Réinitialiser le formulaire
+        postContentInput.value = '';
+        imageInput.value = '';
+      }
+      savePublicationsToLocalStorage(); // Ajouter cette ligne pour sauvegarder les publications après la création d'une nouvelle publication
+    }
+
+// Fonction pour ajouter une publication à la liste
+function addPost(postContent, postNumber, image) {
+  const postList = document.getElementById('postList');
+  const newPost = document.createElement('div');
+  newPost.classList.add('post');
+  newPost.innerHTML = `
+    <h2>Nouvelle Publication</h2>
+    <p>${postContent}</p>
+    ${image ? `<img src="${image}" alt="Image publiée">` : ''}
+    <div class="comments">
+      <h3>Commentaires</h3>
+      <ul class="comment-list" id="commentList${postNumber}">
+        <!-- Les commentaires pour ce post seront ajoutés ici par JavaScript -->
+      </ul>
+      <input type="text" placeholder="Votre commentaire..." id="commentInput${postNumber}">
+      <button onclick="addComment('commentList${postNumber}', 'commentInput${postNumber}')">Envoyer</button>
+    </div>
+  `;
+
+  // Ajoute la publication au début de la liste
+  postList.insertBefore(newPost, postList.firstChild);
+
+  // Sauvegarde de la publication dans la base de données via une requête AJAX
+  savePostToDatabase(postContent, postNumber, image);
+}
+
+// Fonction pour sauvegarder la publication dans la base de données via une requête AJAX
+function savePostToDatabase(postContent, postNumber, image) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', '/add_post', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log(JSON.parse(xhr.responseText).message);
+    } else {
+      console.error('Une erreur est survenue lors de l\'ajout de la publication.');
+    }
+  };
+  xhr.send(`content=${encodeURIComponent(postContent)}&image=${encodeURIComponent(image)}`);
+}
+
+// Fonction pour ajouter un commentaire sous le post spécifié
+function addComment(commentListId, commentInputId, content) {
+  const commentInput = document.getElementById(commentInputId).value;
+  if (commentInput.trim() !== '') {
+    const commentList = document.getElementById(commentListId);
+    const newComment = document.createElement('li');
+    newComment.classList.add('comment'); // Ajoute la classe 'comment' pour appliquer les styles CSS spécifiques
+    newComment.innerHTML = `
+      <span class="comment-content">Utilisateur connecté : ${commentInput}</span>
+      <span class="comment-delete" onclick="deleteComment(this)">Supprimer</span>
+      <ul class="sub-comments"></ul>
+      <input type="text" placeholder="Votre commentaire..." class="sub-comment-input">
+      <button onclick="addSubComment(this)">Envoyer</button>
+    `;
+    commentList.appendChild(newComment);
+    document.getElementById(commentInputId).value = '';
+
+    // Sauvegarde du commentaire dans le local storage
+    saveCommentsToLocalStorage();
+  }
+}
+
+
+// Fonction pour sauvegarder le commentaire dans la base de données via une requête AJAX
+function saveCommentToDatabase(commentListId, commentHTML) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', '/add_comment', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log(JSON.parse(xhr.responseText).message);
+    } else {
+      console.error('Une erreur est survenue lors de l\'ajout du commentaire.');
+    }
+  };
+  xhr.send(`content=${encodeURIComponent(commentHTML)}&publication_id=${encodeURIComponent(commentListId)}`);
+}
+
+// Fonction pour ajouter un sous-commentaire
+function addSubComment(buttonComment) {
+  const subCommentInput = buttonComment.parentElement.querySelector('.sub-comment-input').value;
+  if (subCommentInput.trim() !== '') {
+    const subCommentList = buttonComment.parentElement.querySelector('.sub-comments');
+    const newSubComment = document.createElement('li');
+    newSubComment.innerHTML = 'Utilisateur connecté (sous-commentaire) : ' + subCommentInput;
+    subCommentList.appendChild(newSubComment);
+    buttonComment.parentElement.querySelector('.sub-comment-input').value = '';
+
+    // Sauvegarde du sous-commentaire dans le local storage
+    saveSubCommentsToLocalStorage();
+  }
+}
+
+// Gérer l'événement de sélection d'une image
+document.getElementById('imageInput').addEventListener('change', handleImageUpload);
+
+// Fonction pour gérer le téléchargement d'une image
+function handleImageUpload(event) {
+  const imageFile = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = function() {
+    const imageContent = reader.result;
+    // Appeler la fonction pour ajouter la publication avec l'image
+    addPost('Publication avec image', Date.now(), imageContent);
+  };
+  if (imageFile) {
+    reader.readAsDataURL(imageFile);
+  }
+}
+// Fonction pour charger les données sauvegardées depuis le local storage lors du chargement de la page
+window.onload = () => {
+  loadPublicationsFromLocalStorage();
+  loadCommentsFromLocalStorage();
+  loadSubCommentsFromLocalStorage();
+};
+
+// Fonction pour sauvegarder le sous-commentaire dans la base de données via une requête AJAX
+function saveSubCommentToDatabase(buttonComment, subCommentHTML) {
+  const subCommentList = buttonComment.parentElement.querySelector('.sub-comments');
+  const subCommentListId = 'subCommentList' + subCommentList.parentElement.querySelector('.comment-content').innerText.replace(/\s+/g, '');
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', '/add_response', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log(JSON.parse(xhr.responseText).message);
+    } else {
+      console.error('Une erreur est survenue lors de l\'ajout du sous-commentaire.');
+    }
+  };
+  xhr.send(`content=${encodeURIComponent(subCommentHTML)}&comment_id=${encodeURIComponent(subCommentListId)}`);
+}
+
+// Fonction pour supprimer le commentaire
+function deleteComment(commentDeleteButton) {
+  const commentList = commentDeleteButton.parentElement.parentElement;
+  const commentListId = commentList.id;
+  const commentHTML = commentDeleteButton.parentElement.innerHTML;
+
+  // Suppression du commentaire de la base de données via une requête AJAX
+  deleteCommentFromDatabase(commentListId, commentHTML);
+
+  commentDeleteButton.parentElement.remove();
+}
+
+// Fonction pour supprimer le commentaire de la base de données via une requête AJAX
+function deleteCommentFromDatabase(commentListId, commentHTML) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', '/delete_comment', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log(JSON.parse(xhr.responseText).message);
+    } else {
+      console.error('Une erreur est survenue lors de la suppression du commentaire.');
+    }
+  };
+  xhr.send(`comment_id=${encodeURIComponent(commentListId)}&comment_content=${encodeURIComponent(commentHTML)}`);
+}
+
+// Gérer l'événement de sélection d'une image
+document.getElementById('imageInput').addEventListener('change', handleImageUpload);
+
+// Fonction pour gérer le téléchargement d'une image
+function handleImageUpload(event) {
+  const imageFile = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = function() {
+    const imageContent = reader.result;
+    // Appeler la fonction pour ajouter la publication avec l'image
+    addPost('Publication avec image', Date.now(), imageContent);
+  };
+  if (imageFile) {
+    reader.readAsDataURL(imageFile);
+  }
+}
+function afficherPublications() {
+  fetch('/get_publications')
+    .then((response) => response.json())
+    .then((data) => {
+      data.publications.forEach((publication) => {
+        addPost(publication.contenu, publication.numero, publication.image);
+      });
+    });
+}
+
+  </script>
+</body>
+</html>

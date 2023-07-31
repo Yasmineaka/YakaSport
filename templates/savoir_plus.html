@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>En savoir plus - YakaSport</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+   
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .navbar {
+    background-color: #FFA500;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -10px;
+    padding: 0;
+  }
+
+  strong {
+    color: green;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #ffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(137, 43, 226, 0.671);
+  }
+
+  .buttons {
+    margin-left: auto;
+  }
+
+  button {
+    background-color: #009f25e4;
+    color: #ffff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: rgba(137, 43, 226, 0.671);
+  }
+
+  button a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .footer {
+    background-color: #FFA500;
+    color: #ffff;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .content-container {
+    padding: 30px;
+  }
+
+  .header-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .description-text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .sport-types-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sport-type {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .sport-type img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .sport-type h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .fan-discussion-container {
+    padding: 30px;
+    text-align: center;
+  }
+
+  .fan-discussion-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .fan-discussion-text {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  /* Styles responsifs */
+  @media (max-width: 300px) {
+    .navbar {
+      flex-direction: column;
+    }
+
+    .logo {
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .content-container {
+      padding: 20px;
+    }
+
+    .header-text {
+      font-size: 20px;
+    }
+
+    .description-text {
+      font-size: 16px;
+    }
+
+    .sport-type {
+      width: 100%;
+    }
+
+    .sport-types-container {
+      justify-content: flex-start;
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <ul style="list-style: none;"><li><a style="text-decoration: none; color: #fefdfc; box-shadow: 1px 1px 1px;  " href="/">Yaka<strong>Sport</strong></a></li></ul>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/connexion">Publications</a></li>
+        <li><a href="/connexion">Achat de ticket</a></li>
+        <li><a href="/a_propos">A propos</a></li>
+      </ul>
+    </nav>
+    <div class="buttons">
+      <button class="btn-connexion"><a href="/connexion">Connexion</a></button>
+      <button class="btn-inscription"><a href="/inscription">Inscription</a></button>
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="header-text">Bienvenue sur notre plateforme d'échange et d'achat de tickets !</div>
+    <div class="description-text">Découvrez un monde de possibilités pour assister à vos événements préférés en toute simplicité et sécurité. Trouvez, échangez ou achetez vos billets en un clic et profitez pleinement de vos moments inoubliables !</div>
+    <div class="sport-types-container">
+      <div class="sport-type">
+        <img src="../static/img/inline_image_preview.jpg" alt="Football">
+        <h3>Football</h3>
+        <p>Découvrez tous les matches de football des ligues nationales et internationales.</p>
+      </div>
+      <div class="sport-type">
+        <img src="../static/img/0r0wyTXpHTvBpciIZ.jpg" alt="Basketball">
+        <h3>Basketball</h3>
+        <p>Assistez aux matchs de basketball avec les meilleures équipes et les stars de la NBA.</p>
+      </div>
+      <div class="sport-type">
+        <img src="../static/img/tennis.jpg" alt="Tennis">
+        <h3>Tennis</h3>
+        <p>Ne manquez pas les tournois de tennis avec les meilleurs joueurs du monde.</p>
+      </div>
+      <div class="sport-type">
+        <img src="../static/img/atlétisme.jpg" alt="Athlétisme">
+        <h3>Athlétisme</h3>
+        <p>Vivez l'émotion des compétitions d'athlétisme avec les athlètes les plus talentueux.</p>
+      </div>
+      <div class="fan-discussion-container">
+        <img class="fan-discussion-image" src="../static/img/discussion.jpg" alt="Discussion entre fans de sport">
+        <div class="fan-discussion-text">Rejoignez notre communauté de fans de sport passionnés ! Échangez, discutez et partagez vos expériences sportives avec d'autres fans du monde entier. Devenez membre dès aujourd'hui et profitez d'une expérience sportive unique.</div>
+      </div>
+    
+    </div>
+   <!--  <a href="#" class="btn-en-savoir-plus">En savoir plus</a> -->
+  </div>
+  <footer class="footer">
+    <p>Tous droits réservés &copy; 2023 VotreEntreprise</p>
+  </footer>
+</body>
+</html>
